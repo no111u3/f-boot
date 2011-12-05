@@ -1,0 +1,25 @@
+    f-boot version 0.4.1
+
+First boot for at91rm9200(art920t core)
+
+Realised:
+    start cpu core
+    enable led
+    print init message
+    setup plls (plla - 180MHz, pllb - 48(96)MHz)
+    setup master clock (180MHz - cpu, 90MHz - master bus)
+    setup caches and internal memories
+    setup interupts
+    setup sdram (128 MB, 90MHz)
+    first start test sdram(1MB, 1kB, 4B)
+Future:
+    #setup spi (8MB, 1 - 66MHz)
+    !first start test spi (1-160pages, full mem)
+    setup twi (64kB, 100 - 400kHz)
+    first start test spi (1-160pages, full mem)
+    1load any data or code to sdram through x-modem
+    2run any code of any offsets in sdram
+    3read and write flash
+    read and write eeprom
+    4write f-boot to flash and boot it
+    update f-boot

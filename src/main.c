@@ -7,6 +7,8 @@
 extern void main(void) {
     /* first sdram test - test mem size */
     first_sdram_test();
+    /* first spi test - spi flash detected */
+    first_spi_test();
 }
 /* first sdram test - test mem size */
 static void first_sdram_test(void) {
@@ -30,4 +32,8 @@ static void first_sdram_test(void) {
         }
     }
     util_printf("%dkB\n", i * 4);
+}
+/* first spi test - spi flash detected */
+static void first_spi_test(void) {
+    util_puts("SPI: ");
 }

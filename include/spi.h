@@ -14,8 +14,8 @@ static void spi_set_mode(const unsigned char mode);
 /* SPI init */
 extern void spi_init(const unsigned char mode);
 /* SPI chip select setup */
-static void spi_cs_set(unsigned cs, unsigned bits, unsigned baud, unsigned delay, unsigned polar);
+extern void spi_cs_set(unsigned cs, unsigned bits, unsigned baud, unsigned delay, unsigned polar);
 /* SPI chip select */
 extern void spi_select(unsigned cs);
 /* SPI tarnsfer block */
-static void spi_transfer(struct spi_t_block * t_block, int n);
+extern void spi_transfer(struct spi_t_block * t_block, int n);

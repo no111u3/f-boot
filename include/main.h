@@ -20,3 +20,5 @@
 extern void main(void);
 /* first sdram test - test mem size */
 static void first_sdram_test(void);
+/* first spi test - spi flash detected */
+static void first_spi_test(void);

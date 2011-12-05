@@ -2,7 +2,7 @@
  * SPI recieve transmit
  */
 /* SPI tarnsfer block */
-static void spi_transfer(struct spi_t_block * t_block, int n) {
+extern void spi_transfer(struct spi_t_block * t_block, int n) {
     AT91C_BASE_SPI->SPI_PTCR = AT91C_PDC_TXTDIS | AT91C_PDC_RXTDIS;
     
     AT91C_BASE_SPI->SPI_TPR = (unsigned) t_block[0].spi_tx;

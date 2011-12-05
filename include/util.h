@@ -1,6 +1,10 @@
 /**
  * UTIL header
  */
+#define XM_NAK      0x15
+#define XM_SOH      0x01
+#define XM_ACK      0x06
+#define XM_EOT      0x04
 /* UTIL puting string */
 extern void util_puts(const char * buffer);
 /* UTIL delay */
@@ -13,3 +17,7 @@ unsigned int util_hex_int(const char *buffer);
 extern unsigned util_printf(const char * format, ...);
 /* UTIL memory copy */
 extern void util_memcp(void *dst, const void *src, unsigned len);
+/* UTIL crc16 */
+static unsigned short util_crc16(unsigned char *ptr, int len);
+/* UTIL x-modem reciever */
+int util_xmod_recv(void * ptr);

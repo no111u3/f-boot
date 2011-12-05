@@ -12,3 +12,5 @@
 #include "util/printf.c"
 /** UTIL memory */
 #include "util/mem.c"
+/** UTIL x-model */
+#include "util/xmod.c"

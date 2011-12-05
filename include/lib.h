@@ -9,4 +9,5 @@
 #include <sdramc.h>
 #include <spi.h>
 #include <util.h>
+#include <at45.h>
 extern void raise(void);

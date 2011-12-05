@@ -16,6 +16,8 @@
 #include "lib/spi.c"
 /** UTIL */
 #include "lib/util.c"
+/** AT45 flash's */
+#include "lib/at45.c"
 /* Other functions */
 /** Raise */
 extern void raise(void) {

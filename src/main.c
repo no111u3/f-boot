@@ -15,7 +15,7 @@ static void first_sdram_test(void) {
     unsigned int mem_w, mem_r, i, j;
     unsigned int * pmem = P_MEM_BEGIN;
     
-    util_puts("SDRAM: ");
+    util_puts("\nSDRAM: ");
     for (i = 0; i < MEM_SIZE_K / 4; i++) {
         j = i << 10;
         *(pmem + j) = i;
@@ -35,5 +35,6 @@ static void first_sdram_test(void) {
 }
 /* first spi test - spi flash detected */
 static void first_spi_test(void) {
-    util_puts("SPI: ");
+    util_puts("\nSPI: ");
+    at45_init();
 }

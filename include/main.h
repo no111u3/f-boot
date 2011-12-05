@@ -6,6 +6,7 @@
 #include <AT91RM9200.h>
 #include <dbgu.h>
 #include <util.h>
+#include <at45.h>
 /* memory begin address */
 #define MEM_BEGIN 0x20000000
 /* pointer of memory begin */

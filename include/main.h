@@ -5,6 +5,7 @@
 #include <types.h>
 #include <AT91RM9200.h>
 #include <dbgu.h>
+#include <aic.h>
 #include <util.h>
 #include <at45.h>
 /* memory begin address */
@@ -24,7 +25,7 @@ volatile int dl_size;
 void *pt_start_dl;
 /** main menu */
 static const char *main_menu = {
-  "\n1: Download [addr]\n"
+  "1: Download [addr]\n"
   "q: Exit and Reboot\n"
 };
 /* main code */
@@ -33,5 +34,9 @@ extern void sys_main(void);
 static void first_sdram_test(void);
 /* first spi test - spi flash detected */
 static void first_spi_test(void);
-/* upload */
-static int upload(void * address);
+/* download */
+static int download(unsigned int address);
+/* system interrupt handler */
+extern void sys_handler(void);
+/* aic asm SYS handler */
+extern void aic_asm_sys_handler(void);

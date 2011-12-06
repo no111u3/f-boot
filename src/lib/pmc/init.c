@@ -48,21 +48,3 @@ extern void mck_init(unsigned int mck_value) {
     while(!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_MOSCS)
         && (tmp_counter++ < DELAY_MCK));
 }
-/* PLLA init */ 
-extern void plla_init(unsigned int plla_value) {
-    volatile int tmp_counter = 0;
-    /* setup the PLLA */
-    AT91C_BASE_CKGR->CKGR_PLLAR = plla_value;
-    /* waiting for stable PLLA clock */
-    while(!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_LOCKA)
-        && (tmp_counter++ < DELAY_PLL));
-}
-/* PLLB init */
-extern void pllb_init(unsigned int pllb_value) {
-    volatile int tmp_counter = 0;
-    /* setup the PLLB */
-    AT91C_BASE_CKGR->CKGR_PLLBR = pllb_value;
-    /* waiting for stable PLLB clock */
-    while(!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_LOCKB)
-        && (tmp_counter++ < DELAY_PLL));
-}

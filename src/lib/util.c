@@ -4,6 +4,8 @@
 /* Includes */
 /** UTIL puting string */
 #include "util/puts.c"
+/** UTIL geting string */
+#include "util/gets.c"
 /** UTIL delay */
 #include "util/delay.c"
 /** UTIL int str conv */

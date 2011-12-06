@@ -100,7 +100,7 @@ reset:
 /* Enable interrupts */
 		msr     CPSR_c, #ARM_MODE_SYS | F_BIT
 /* Run main funtion */
-        bl      main
+        bl      sys_main
 /* Infinity loop - end of app*/
 end_app:
         b       end_app

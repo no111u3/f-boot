@@ -22,9 +22,11 @@
 #define AT91Cmy_SDRAM_MR_CHIP 0x0080
 /*old -> 0x2E0; 0x170 -> 60 MHz; 0x293 -> 90Mhz; 0x61 -> 16MHz */
 #define AT91Cmy_SDRAM_Refresh 0x230
+#ifdef LIB_H
 /* SDRAMC enable i/o pins */
 static void sdramc_pio_enable(void);
 /* AIC EBI init */
 static void aic_ebi_init(void);
 /* SDRAMC init */
+#endif
 void sdramc_init(void);

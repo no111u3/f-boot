@@ -7,11 +7,13 @@ struct spi_t_block {
     const void *spi_tx;
     unsigned spi_t_len;
 };
+#ifdef LIB_H
 /* SPI enable i/o pins */
 static void spi_pio_enable(void);
 /* SPI setup mode */
 static void spi_set_mode(const unsigned char mode);
 /* SPI init */
+#endif
 extern void spi_init(const unsigned char mode);
 /* SPI chip select setup */
 extern void spi_cs_set(unsigned cs, unsigned bits, unsigned baud, unsigned delay, unsigned polar);

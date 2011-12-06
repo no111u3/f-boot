@@ -1,6 +1,8 @@
 /**
  * lib header
  */
+/* Defines */
+#define LIB_H
 /* Includes */
 #include <AT91RM9200.h>
 #include <dbgu.h>

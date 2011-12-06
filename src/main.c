@@ -4,8 +4,9 @@
 /* Includes */
 #include <main.h>
 /* main code */
-extern void main(void) {
-    unsigned char flag;
+extern void sys_main(void) {
+    char selector;
+    char command_line[40];
     /* first sdram test - test mem size */
     first_sdram_test();
     /* first spi test - spi flash detected */
@@ -13,18 +14,20 @@ extern void main(void) {
     /* main loop */
     while (1) {
         util_printf(main_menu);
-        flag = dbgu_getc();
-        switch (flag) {
+        util_gets(command_line);
+        util_puts("\n");
+        selector = command_line[0];
+        switch (selector) {
             // exit of loop
             case 'q':
-                util_puts("\nQuit & Reset\n");
+                util_puts("Quit & Reset\n");
                 AT91C_BASE_ST->ST_WDMR = 64 | AT91C_ST_RSTEN;
                 AT91C_BASE_ST->ST_CR = AT91C_ST_WDRST;
                 while (1);
             break;
             // undef
             default:
-                util_puts("\nUndefined command\n");
+                util_puts("Undefined command\n");
             break;
         }
     }
@@ -66,7 +69,7 @@ static int upload(void * address) {
     /* enable RXRDY interrupt in DBGU */
     AT91C_BASE_DBGU->DBGU_IER |= AT91C_US_RXRDY;
     while(!dl_size);
-    delay(100000);
+    util_delay(100000);
     if (dl_size > 0) {
         util_printf("\n\nTransfer complete\nByte's sended: 0x%x\n", dl_size);
     }

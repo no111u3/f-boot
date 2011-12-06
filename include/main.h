@@ -4,6 +4,7 @@
 /* Includes */
 #include <types.h>
 #include <AT91RM9200.h>
+#include <dbgu.h>
 #include <util.h>
 #include <at45.h>
 /* memory begin address */
@@ -27,7 +28,7 @@ static const char *main_menu = {
   "q: Exit and Reboot\n"
 };
 /* main code */
-extern void main(void);
+extern void sys_main(void);
 /* first sdram test - test mem size */
 static void first_sdram_test(void);
 /* first spi test - spi flash detected */

@@ -1,4 +1,4 @@
-    f-boot version 0.7.0
+    f-boot version 0.8.0
 
 First boot for at91rm9200(art920t core)
 
@@ -15,14 +15,14 @@ Realised:
     setup spi (8MB, 1 - 66MHz)
     find flash(AT45DB642D)
     load any data or code to sdram through x-modem
+    run any code of any offsets in sdram
 Future:
     setup twi (64kB, 100 - 400kHz)
     find eeprom(24LC128, 24LC512)
-    #run any code of any offsets in sdram
-    !read and write flash
+    #read and write flash
     read and write eeprom
-    1erase eeprom (current, regions(page, block, full)
-    2write f-boot to flash and boot it
-    3update f-boot
-    4write 2nd code to flash and run it
-    update 2nd code
+    !erase eeprom (current, regions(page, block, full)
+    1write f-boot to flash and boot it
+    2update f-boot
+    3write 2nd code to flash and run it
+    4update 2nd code

@@ -26,6 +26,7 @@ void *pt_start_dl;
 /** main menu */
 static const char *main_menu = {
   "1: Download [addr]\n"
+  "2: Run [addr]\n"
   "q: Exit and Reboot\n"
 };
 /* main code */
@@ -40,3 +41,5 @@ static int download(unsigned int address);
 extern void sys_handler(void);
 /* aic asm SYS handler */
 extern void aic_asm_sys_handler(void);
+/* run code asm-writed function */
+extern void asm_run_code(unsigned int addr);

@@ -7,7 +7,7 @@
 extern void sys_main(void) {
     char selector;
     char command_line[40];
-    unsigned int d_addr = 0, d_size;
+    unsigned int d_addr = 0, d_size, r_addr;
     /* first sdram test - test mem size */
     first_sdram_test();
     /* first spi test - spi flash detected */
@@ -35,6 +35,16 @@ extern void sys_main(void) {
                 }
                 else {
                     util_puts("Undefined download address\n");
+                }
+            break;
+            case '2':
+                r_addr = util_hex_int(&command_line[2]);
+                if (r_addr) {
+                    util_printf("Run code at 0x%x\n", r_addr);
+                    asm_run_code(r_addr);
+                }
+                else {
+                    util_puts("Undefined run address\n");
                 }
             break;
             /* exit of loop */
@@ -90,7 +100,7 @@ static int download(unsigned int address) {
     while(!dl_size);
     util_delay(100000);
     if (dl_size > 0) {
-        util_printf("\n\nTransfer complete\nByte's sended: 0x%x\n", dl_size);
+        util_printf("\n\nTransfer complete\nByte's sended: %d\n", dl_size);
     }
     else {
         util_puts("Transfer failed\n!");

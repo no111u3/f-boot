@@ -37,6 +37,7 @@ extern void sys_main(void) {
                     util_puts("Undefined download address\n");
                 }
             break;
+            /* run code at offset */
             case '2':
                 r_addr = util_hex_int(&command_line[2]);
                 if (r_addr) {
